@@ -1,26 +1,14 @@
 "use client"
 
-import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Skeleton } from "@/components/ui/skeleton"
 import { useState } from "react"
 import { DotsHorizontalIcon, Pencil1Icon } from "@radix-ui/react-icons"
 import { Trash2 } from "lucide-react"
-
-// Lazy load Dialog components
-const DropdownMenu = dynamic(() => import("@/components/ui/dropdown-menu").then(mod => ({ default: mod.DropdownMenu })))
-const DropdownMenuContent = dynamic(() => import("@/components/ui/dropdown-menu").then(mod => ({ default: mod.DropdownMenuContent })))
-const DropdownMenuItem = dynamic(() => import("@/components/ui/dropdown-menu").then(mod => ({ default: mod.DropdownMenuItem })))
-const DropdownMenuTrigger = dynamic(() => import("@/components/ui/dropdown-menu").then(mod => ({ default: mod.DropdownMenuTrigger })))
-const Dialog = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.Dialog })))
-const DialogContent = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogContent })))
-const DialogFooter = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogFooter })))
-const DialogHeader = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogHeader })))
-const DialogTitle = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogTitle })))
-const DialogTrigger = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogTrigger })))
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 
 type Selected = { id: string; name: string; flagQuery: string }
 

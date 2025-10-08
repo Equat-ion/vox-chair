@@ -1,32 +1,17 @@
 "use client"
 
-import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
-import { Skeleton } from "@/components/ui/skeleton"
-import { useEffect, useState, Suspense } from "react"
+import { useEffect, useState } from "react"
 import { GearIcon, ReloadIcon, PlayIcon, MixerHorizontalIcon } from "@radix-ui/react-icons"
 import { X } from "lucide-react"
 import { useHeader } from "@/components/app-sidebar-layout"
-
-// Lazy load heavy components
-const ScrollArea = dynamic(() => import("@/components/ui/scroll-area").then(mod => ({ default: mod.ScrollArea })), {
-  loading: () => <Skeleton className="h-[400px] w-full" />,
-  ssr: false
-})
-const Dialog = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.Dialog })))
-const DialogContent = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogContent })))
-const DialogFooter = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogFooter })))
-const DialogHeader = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogHeader })))
-const DialogTitle = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogTitle })))
-const DialogTrigger = dynamic(() => import("@/components/ui/dialog").then(mod => ({ default: mod.DialogTrigger })))
-const TimePicker = dynamic(() => import("@/components/time-picker").then(mod => ({ default: mod.TimePicker })), {
-  loading: () => <Skeleton className="h-20 w-full" />,
-  ssr: false
-})
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { TimePicker } from "@/components/time-picker"
 
 type Speaker = {
   id: string

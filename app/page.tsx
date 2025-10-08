@@ -1,21 +1,11 @@
 "use client"
 
-import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-
-// Lazy load heavy components
-const SetupNewCommittee = dynamic(() => import("@/components/setup-committee").then(mod => ({ default: mod.SetupNewCommittee })), {
-  loading: () => <Skeleton className="h-[600px] w-full" />,
-  ssr: true
-})
-const EditableCommittee = dynamic(() => import("@/components/editable-committee").then(mod => ({ default: mod.EditableCommittee })), {
-  loading: () => <Skeleton className="h-[600px] w-full" />,
-  ssr: true
-})
+import { SetupNewCommittee } from "@/components/setup-committee"
+import { EditableCommittee } from "@/components/editable-committee"
 
 // ----- Data -----
 type Country = { id: string; name: string; flagQuery: string }
