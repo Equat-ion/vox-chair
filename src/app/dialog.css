@@ -1,0 +1,24 @@
+:root {
+  --dialog-bg: hsl(var(--background));
+  --dialog-fg: hsl(var(--foreground));
+  --dialog-border: hsl(var(--border));
+  --dialog-input-bg: hsl(var(--input-background));
+}
+
+[data-theme="dark"] {
+  --dialog-bg: hsl(var(--background));
+  --dialog-fg: hsl(var(--foreground));
+  --dialog-border: hsl(var(--border));
+  --dialog-input-bg: hsl(var(--input-background));
+}
+
+.dialog-content {
+  background-color: var(--dialog-bg);
+  color: var(--dialog-fg);
+  border-color: var(--dialog-border);
+}
+
+.dialog-content input,
+.dialog-content textarea {
+  background-color: var(--dialog-input-bg);
+}

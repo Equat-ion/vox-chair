@@ -1,0 +1,8 @@
+.dialog-input {
+  @apply bg-background border-input;
+}
+
+.dark .dialog-input {
+  background-color: var(--input-background);
+  border-color: var(--border);
+}
